@@ -8,7 +8,7 @@ describe("Testing Comapny Tab", () => {
       add = regdata;
 
     });
-    
+
   });
 
   beforeEach("Business DashBoard Login", () => {
@@ -41,8 +41,7 @@ describe("Testing Comapny Tab", () => {
       .wait(4000)
       .click();
     cy.contains('Add Company')
-      .click()
-      .url().should('eq', 'https://business.dev.task-mo.com/add-company');
+      .click().url().should('eq', 'https://business.dev.task-mo.com/add-company');
 
 
     cy.get('#demo-simple-select').click();
@@ -55,16 +54,16 @@ describe("Testing Comapny Tab", () => {
     cy.get(':nth-child(3) > :nth-child(1) > [style="min-width: 100%;"] > .MuiInputBase-root > #outlined-basic').click();
     cy.contains('Insure Tech').click();
 
-    cy.get("input[name='founder_name']").type(add.founder_name,{force:true});
+    cy.get("input[name='founder_name']").type(add.founder_name, { force: true });
     cy.get("input[name='founder_email']").type(add.founder_email);
     cy.get("textarea[name='about_company']").type(add.about_company);
     cy.get("input[name='company_pincode']").type(add.PIN_code);
     cy.get("textarea[name='company_address']").type(add.company_address);
     cy.get(':nth-child(2) > [style="min-width: 100%;"] > .MuiInputBase-root > #outlined-basic').click();
     cy.get('#menu-country > .MuiPaper-root > .MuiList-root > .MuiButtonBase-root')
-    .click();
+      .click();
     cy.get("div[class='MuiGrid-root MuiGrid-item MuiGrid-justify-content-xs-flex-end MuiGrid-grid-xs-12'] button[type='submit']").click()
-    .should('be.visible');
+      .should('be.visible');
     cy.get(':nth-child(2) > a > .MuiListItemIcon-root').click();
 
 
